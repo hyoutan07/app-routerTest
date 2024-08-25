@@ -1,0 +1,33 @@
+.dammaku-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* 弾幕の表示領域の高さ */
+  background-color: black;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.dammaku-messages {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
+}
+
+.dammaku-message {
+  position: absolute;
+  top: calc(50px + (500px * var(--random-position)));
+  left: 100%;
+  font-size: 20px;
+  color: white;
+  animation: moveMessage 8s linear;
+}
+
+@keyframes moveMessage {
+  from {
+    transform: translateX(100vw); /* 画面の右端外から開始 */
+  }
+  to {
+    transform: translateX(-100vw); /* 画面の左端外で終了 */
+  }
+}
